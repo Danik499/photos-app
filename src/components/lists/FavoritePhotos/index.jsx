@@ -1,14 +1,11 @@
 import { View, Text, FlatList, Image } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPhotos } from "../../../store/photosSlice";
+import { useSelector } from "react-redux";
 import FavoritePhoto from "../../cards/FavoritePhoto";
 
 import icons from "../../../constants/icons";
 import styles from "./favoritephotos.style";
 
 const favoritePhotos = () => {
-  const dispatch = useDispatch();
-
   const { photos, favoritePhotos } = useSelector((state) => state.photos);
 
   const photosToRender = photos.filter((photo) =>
@@ -39,6 +36,9 @@ const favoritePhotos = () => {
           )}
           key={(item) => item.id}
           keyExtractor={item => item.id}
+          ListHeaderComponent={() => (
+            <Text>Hold to remove</Text>
+          )}
         />
       )}
     </View>

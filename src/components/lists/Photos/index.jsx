@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { View, Text, FlatList, ActivityIndicator, TextInput } from "react-native";
+import { View, FlatList, ActivityIndicator, TextInput } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPhotos } from "../../../store/photosSlice";
 import Photo from "../../cards/Photo";
